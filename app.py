@@ -20,6 +20,10 @@ skill_columns = list(df.columns[1:])  # Exclude 'Career' column
 # Set page configuration and custom styling
 st.set_page_config(page_title="Career Predictor", page_icon="🌟", layout="wide")
 
+# Add reference and brief mission statement
+st.write("**Dataset Reference:** Hossain Faruque, Sakir; Khushbu, Sharun Akter (2024), 'Student Career Dataset', Mendeley Data, V2, doi: 10.17632/4spj4mbpjr.2")
+st.write("**Our Mission:** We help you find your best career based on your selected skills!")
+
 st.markdown(
     """
     <style>
