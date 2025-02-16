@@ -4,7 +4,7 @@ from sklearn.preprocessing import LabelEncoder
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
-
+import pickle
 
 # Load the dataset
 file_path = "Career Dataset.xlsx"  # Update the path if needed
@@ -53,10 +53,13 @@ history = model.fit(X_train, y_train, epochs=50, batch_size=32, validation_data=
 # Save the trained model
 model.save("career_nn_model.h5")
 
-# Save the label encoder
-import pickle
-with open("label_encoder.pkl", "wb") as f:
-    pickle.dump(label_encoder, f)
+# Test loading the file
+try:
+    with open("label_encoder.pkl", "rb") as f:
+        label_encoder = pickle.load(f)
+    print("Label encoder loaded successfully!")
+except Exception as e:
+    print(f"Error loading label_encoder.pkl: {e}")
 
 # Load model and label encoder
 model = keras.models.load_model("career_nn_model.h5")

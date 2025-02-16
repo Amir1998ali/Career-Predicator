@@ -3,3 +3,4 @@ streamlit
 numpy
 pandas
 pickle-mixin
+scikit-learn
